@@ -17,11 +17,11 @@ if not GROQ_API_KEY:
 
 client = Groq(api_key=GROQ_API_KEY)
 
-prompt1 = "what is tokens for LLM?"
-prompt2 = "write a love letter for Sohalina"
-prompt3 = "Heyy"
-
-prompts = [prompt1, prompt2, prompt3]
+prompts = [
+    "what is tokens for LLM?",
+    "write a love letter for S",
+    "Heyy"
+]
 
 for prompt in prompts:
     response = client.chat.completions.create(
@@ -37,6 +37,7 @@ for prompt in prompts:
     usage = response.usage
     print(
         f"Prompt: {prompt} --- input_tokens: {usage.prompt_tokens} "
+        f"Answer: {response.choices[0].message.content}"
         f"--- completion_tokens: {usage.completion_tokens} "
         f"--- total_tokens: {usage.total_tokens} --- Finish Reason: {response.choices[0].finish_reason}"
     )
