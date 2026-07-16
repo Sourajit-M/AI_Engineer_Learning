@@ -78,9 +78,9 @@ print(answer)
 df = json.loads(answer)
 resume = Resume(**df)
 
-print(resume.skills)
-print(resume.experience)
-print(resume.projects)
+# print(resume.skills)
+# print(resume.experience)
+# print(resume.projects)
 
 class HRRequirements(BaseModel):
     skills: list[str]
@@ -103,7 +103,7 @@ hr = HRRequirements(
 )
 
 user_prompt = f"""
-Go through {hr} and {resume} match the skills, experience and project of the candidate and generate the percentage matching.
+Go through {hr} and {resume} match the skills, experience and project of the candidate and generate the percentage matching. Avoid any vague information. Only say the matched percentage.
 """
 
 class Match(BaseModel):
