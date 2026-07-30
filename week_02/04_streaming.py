@@ -5,6 +5,7 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 from groq import Groq
+import time
 
 load_dotenv()
 
@@ -48,3 +49,4 @@ for chunk in response:
     content = chunk.choices[0].delta.content
     if content:
         print(content, end="", flush=True)
+        time.sleep(0.02)

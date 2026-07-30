@@ -97,11 +97,10 @@ def step2_JD_extract(JD):
 def step3_match(candidate, jd):
     print("STEP 3")
     system_prompt="""
-    You are a professional HR assistant. compare the skills of candidate and the skills required in the JD and produce a final score between
-    1 and 100. also produce a short verdict whther the candidate is a good fit for the role.
+    You are a professional HR assistant. compare the skills of candidate and the skills required in the JD and produce a final score between 1 and 100. Also produce a very short verdict whther the candidate is a good fit for the role. 
     """
     user_prompt=f"""
-    Compare and matc h the skills
+    Compare and match the skills
     JD:
     {jd}
     Candidate:
