@@ -7,7 +7,7 @@ load_dotenv()
 my_api_key=os.getenv("GROQ_API_KEY")
 
 if not my_api_key:
-    raise ValueError("API key kaha hai bhai")
+    raise ValueError("API KEY NOT FOUND")
 
 client=Groq(api_key=my_api_key)
 
