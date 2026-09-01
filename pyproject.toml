@@ -20,6 +20,7 @@ dependencies = [
     "python-docx>=1.2.0",
     "python-dotenv>=1.2.2",
     "qdrant-client[fastembed]>=1.19.0",
+    "rank-bm25>=0.2.2",
     "requests>=2.34.2",
     "sentence-transformers>=5.7.0",
     "uvicorn>=0.52.1",
@@ -31,6 +32,4 @@ dependencies = [
 [tool.uv.workspace]
 members = [
     "week_03/youtube-rag",
-    "labelme",
-    "nyga-proj",
 ]

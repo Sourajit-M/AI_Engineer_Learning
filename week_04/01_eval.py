@@ -80,7 +80,6 @@ Context:
 
 Question:
 {question}
-Do not make mathematical assumptions or add implicit calculations
 
 If the answer is not present in the context, say:
 "I don't know based on the provided information."
@@ -130,7 +129,10 @@ golden_dataset = [
 def llm_judge(prompt):
     response = groq_client.chat.completions.create(
         model="openai/gpt-oss-120b",
-        messages=[{"role": "user", "content": prompt}],
+        messages=[
+            {"role": "system", "content": "Do not make mathematical assumptions or add implicit calculations"},
+            {"role": "user", "content": prompt}
+        ],
         response_format={"type": "json_object"},
         temperature=0,
     )
